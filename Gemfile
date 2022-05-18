@@ -1,3 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'sinatra-contrib' 
+gem 'sinatra_generator' 
+gem 'pry'
+gem 'bundler'
+gem 'pg'
+gem 'rerun'
+gem 'bcrypt'
+gem 'puma'
