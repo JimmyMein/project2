@@ -1,13 +1,11 @@
 get '/' do
     music_items = all_music()
     
-    music_sounds = HTTParty.get("https://freesound.org/apiv2/search/text/?query=piano&token=#{ENV['FREESOUND_API_KEY']}")
-    
+    # music_sounds = HTTParty.get("https://freesound.org/apiv2/search/text/?query=piano&token=#{ENV['FREESOUND_API_KEY']}")
+
     erb :'music/index', locals: {
-      music_items: music_items,
-      music_sounds: music_sounds
+      music_items: music_items
     }
-  
   end
   
   get '/music/new' do
