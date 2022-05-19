@@ -2,18 +2,16 @@ CREATE DATABASE music_by;
 
 \c music_by
 
-CREATE TABLE food(
+CREATE TABLE music(
     id SERIAL PRIMARY KEY,
+    user_id TEXT, 
     name TEXT,
-    image_url TEXT
+    sound_name TEXT,
 );
-
-INSERT INTO food(name, image_url);
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     name TEXT,
     email TEXT,
+    password_digest TEXT,
 );
-
-ALTER TABLE users ADD COLUMN password_digest TEXT;

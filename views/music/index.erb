@@ -1,0 +1,30 @@
+<h1>Music By</h1>
+
+<% if logged_in?%>
+    <h2>By <%= current_user['name'] %></h2>
+   
+    <form action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <button>Logout</button>
+    </form>
+
+    <a href="/music/new">Add new Sounds</a>
+
+    <section class="all-music">
+        <% music_items.each do |music| %>
+            <article class= "music_item">
+                <h2><%= music['name'] %></h2>
+                <a href="/music/<%= music['id'] %>/edit">Edit</a>
+
+                <form class="delete-music" action="/music/<%= music['id'] %>" method="POST">
+                    <input type="hidden" name="_method" value="delete">
+                    <button> Delete</button>
+                </form>
+            </article>
+        <% end %>
+    </section>
+    <% else %>
+
+<a href="/users/new">Sign Up</a>
+<a href="/login">Login</a>
+<% end %>
