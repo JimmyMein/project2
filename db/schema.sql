@@ -6,12 +6,12 @@ CREATE TABLE music(
     id SERIAL PRIMARY KEY,
     user_id TEXT, 
     name TEXT,
-    sound_name TEXT,
-);
+    sound_name TEXT 
+    );
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     name TEXT,
     email TEXT,
-    password_digest TEXT,
+    password_digest TEXT
 );
