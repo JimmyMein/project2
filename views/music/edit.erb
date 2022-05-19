@@ -1,0 +1,12 @@
+<form action="/music/<%= music['id'] %>" method="POST">
+        <input type="hidden" name="_method" value="put">
+        
+        <label for="">Name: </label>
+        <input type="text" name='name' value="<%= music['name'] %>">
+
+        <label for="">Sound name </label>
+        <input type="text" name='sound' value="<%= music['sound_name'] %>">
+
+        <button>Edit
+        </button>
+</form>

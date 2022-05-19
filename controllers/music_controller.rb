@@ -17,8 +17,6 @@ get '/' do
   
     create_music(name, image_url)
 
-  # instead of string interperlation we use '$1' and '$2'
-  #if its not a GET request we must always use redirect
     redirect '/'
   end
   
@@ -47,6 +45,6 @@ get '/' do
     id = params['id']
   
     delete_music(id)
-    # ALWAYS use redirect if it is a POST, PUT or DELETE request being handled. We only use erb files for a GET request.
+    
     redirect '/'
   end

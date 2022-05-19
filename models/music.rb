@@ -3,16 +3,16 @@ def all_music
 end
 
 
-def create_music(name, image_url)
-    run_sql("INSERT INTO music(name, image_url) VALUES($1, $2)", [name, image_url])
+def create_music(name, sound_name)
+    run_sql("INSERT INTO music(name, sound_name) VALUES($1, $2)", [name, sound_name])
 end
 
 def edit_music(id)
     run_sql("SELECT * FROM music WHERE id = $1", [id])[0]
 end
 
-def update_music(name, image_url, id)
-    run_sql("UPDATE music SET name = $1, image_url = $2 WHERE id = $3", [name, image_url, id])
+def update_music(name, sound_name, id)
+    run_sql("UPDATE music SET name = $1, sound_name = $2 WHERE id = $3", [name, sound_name, id])
 end
 
 def delete_music(id)
