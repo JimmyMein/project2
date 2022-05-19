@@ -1,8 +1,11 @@
 get '/' do
     music_items = all_music()
     
+    music_sounds = HTTParty.get("https://freesound.org/apiv2/search/text/?query=piano&token=#{ENV['FREESOUND_API_KEY']}")
+    
     erb :'music/index', locals: {
-      music_items: music_items
+      music_items: music_items,
+      music_sounds: music_sounds
     }
   
   end
@@ -13,9 +16,9 @@ get '/' do
   
   post '/music' do
     name = params['name']
-    image_url = params['image_url']
+    sound = params['sound_name']
   
-    create_music(name, image_url)
+    create_music(name, sound)
 
     redirect '/'
   end
@@ -33,10 +36,10 @@ get '/' do
   
   put '/music/:id' do
     name = params['name']
-    image_url = params['image_url']
+    sound = params['sound_name']
     id = params['id']
 
-    update_music(name, image_url, id)
+    update_music(name, sound, id)
   
     redirect '/'
   end
@@ -45,6 +48,6 @@ get '/' do
     id = params['id']
   
     delete_music(id)
-    
+
     redirect '/'
   end
