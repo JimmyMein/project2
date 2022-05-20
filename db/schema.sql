@@ -15,3 +15,11 @@ CREATE TABLE users(
     email TEXT,
     password_digest TEXT
 );
+
+INSERT INTO music(name, sound_name)
+VALUES 
+    ('Stromae', 'Defiler'),
+    ('BIA', 'LONDON'),
+    ('Foushee', 'Deep End'),
+    ('Rina Sawayama', 'Bad Friend');
+
