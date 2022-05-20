@@ -10,18 +10,36 @@
 
     <a href="/music/new">Add new Sounds</a>
 
+    <a href="/music/suggestions">Suggested Music</a>
+
     <section class="all-music">
         <% music_items.each do |music| %>
             <article class= "music_item">
                 <h2><%= music['name'] %></h2>
-               
+               <h3><%= music['sound_name'] %></h3>
                 <a href="/music/<%= music['id'] %>/edit">Edit</a>
 
                 <form class="delete-music" action="/music/<%= music['id'] %>" method="POST">
                     <input type="hidden" name="_method" value="delete">
                     <button> Delete</button>
                 </form>
-                 <h2><%= music['sound_name'] %></h2>
+                 
+            </article>
+        <% end %>
+    </section>
+
+        <section class="all-music-suggest">
+        <% music_suggestions.each do |music| %>
+            <article class= "music_suggestions">
+                <h2><%= music['name'] %></h2>
+               <h3><%= music['sound_name'] %></h3>
+                <a href="/music/<%= music['id'] %>/edit">Edit</a>
+
+                <form class="delete-music" action="/music/<%= music['id'] %>" method="POST">
+                    <input type="hidden" name="_method" value="delete">
+                    <button> Delete</button>
+                </form>
+                 
             </article>
         <% end %>
     </section>

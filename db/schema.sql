@@ -16,10 +16,16 @@ CREATE TABLE users(
     password_digest TEXT
 );
 
-INSERT INTO music(name, sound_name)
+
+CREATE TABLE suggested_music(
+   id SERIAL PRIMARY KEY,
+    name TEXT,
+    sound_name TEXT 
+    );
+    
+INSERT INTO suggested_music(name, sound_name)
 VALUES 
     ('Stromae', 'Defiler'),
     ('BIA', 'LONDON'),
     ('Foushee', 'Deep End'),
     ('Rina Sawayama', 'Bad Friend');
-

@@ -18,3 +18,11 @@ end
 def delete_music(id)
     run_sql("DELETE FROM music WHERE id =  $1", [id])
 end
+
+def all_music_suggestions
+    run_sql("SELECT * FROM suggested_music ORDER BY id")
+end
+
+def add_sug_music(name, sound_name)
+    run_sql("INSERT INTO suggested_music(name, sound_name) VALUES($1, $2)", [name, sound_name])
+end
