@@ -14,12 +14,14 @@
         <% music_items.each do |music| %>
             <article class= "music_item">
                 <h2><%= music['name'] %></h2>
+               
                 <a href="/music/<%= music['id'] %>/edit">Edit</a>
 
                 <form class="delete-music" action="/music/<%= music['id'] %>" method="POST">
                     <input type="hidden" name="_method" value="delete">
                     <button> Delete</button>
                 </form>
+                 <h2><%= music['sound_name'] %></h2>
             </article>
         <% end %>
     </section>
