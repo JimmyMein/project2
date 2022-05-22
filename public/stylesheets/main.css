@@ -1,0 +1,66 @@
+body {
+    display: grid;
+    background-color: #cccc;
+    justify-items: center;
+    justify-content: center;
+
+}
+
+h1, h2, h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+}
+
+a {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: aqua;
+    background-color: aliceblue;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.3rem;
+    max-width: 45%;
+    margin: 5px;
+}
+
+button {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    text-decoration: aqua;
+    background-color: aliceblue;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    margin: 5px;
+}
+
+.music_item {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+form {
+    display: grid;
+    justify-content: center;
+}
+
+.delete-music {
+    display: grid;
+    justify-content: center;
+}
+
+.music_suggestions {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+}

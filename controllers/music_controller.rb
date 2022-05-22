@@ -14,8 +14,10 @@ get '/' do
   post '/music' do
     name = params['name']
     sound_name = params['sound_name']
-  
-    create_music(name, sound_name) || add_sug_music(name, sound_name)
+    img_url = params['img_url']
+    url = params['url']
+
+    create_music(name, sound_name, img_url, url) || add_sug_music(name, sound_name, img_url, url)
 
     redirect '/'
   end
@@ -34,9 +36,11 @@ get '/' do
   put '/music/:id' do
     name = params['name']
     sound_name = params['sound_name']
+    img_url = params['img_url']
+    url = params['url']
     id = params['id']
 
-    update_music(name, sound_name, id)
+    update_music(name, sound_name, img_url, url, id)
   
     redirect '/'
   end

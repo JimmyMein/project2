@@ -1,6 +1,6 @@
-<h1>Music By</h1>
+<h1>Playlist</h1>
 
-<% if logged_in?%>
+<% if logged_in? %>
     <h2>By <%= current_user['name'] %></h2>
    
     <form action="/sessions" method="POST">
@@ -8,30 +8,15 @@
         <button>Logout</button>
     </form>
 
-    <a href="/music/new">Add new Sounds</a>
+    <a href="/music/new">Add new Song</a>
 
     <a href="/music/suggestions">Suggested Music</a>
 
     <section class="all-music">
         <% music_items.each do |music| %>
             <article class= "music_item">
-                <h2><%= music['name'] %></h2>
-               <h3><%= music['sound_name'] %></h3>
-                <a href="/music/<%= music['id'] %>/edit">Edit</a>
-
-                <form class="delete-music" action="/music/<%= music['id'] %>" method="POST">
-                    <input type="hidden" name="_method" value="delete">
-                    <button> Delete</button>
-                </form>
-                 
-            </article>
-        <% end %>
-    </section>
-
-        <section class="all-music-suggest">
-        <% music_suggestions.each do |music| %>
-            <article class= "music_suggestions">
-                <h2><%= music['name'] %></h2>
+                <h2><a href="<%= "#{music['url']}" %>" target="_blank"><%= music['name'] %></a></h2>
+                <img src=" <%= music['img_url'] %> " alt="">
                <h3><%= music['sound_name'] %></h3>
                 <a href="/music/<%= music['id'] %>/edit">Edit</a>
 
@@ -48,3 +33,4 @@
 <a href="/users/new">Sign Up</a>
 <a href="/login">Login</a>
 <% end %>
+

@@ -7,8 +7,6 @@ enable :sessions
 # database
 require './db/db'
 
-
-
 #models
 require './models/music'
 require './models/user'

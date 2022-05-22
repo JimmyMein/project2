@@ -1,15 +1,19 @@
 <section class="all-music-suggestions">
         <% music_suggestions.each do |music| %>
             <article class= "music_suggestions">
-                <h2><%= music['name'] %></h2>
+                <h2><a href="<%="#{music['url']}"%>" target="_blank"><%= music['name'] %></a></h2>
+                 <img src=" <%= music['img_url'] %> " alt="">
                 <h3><%= music['sound_name'] %></h3>
 
                  <form action="/music" method="POST">
                     <input type="hidden" name="name" value="<%= music['name'] %>">
                     <input type="hidden" name="sound_name" value="<%= music['sound_name'] %>">
+                    <input type="hidden" name="img_url" value="<%= music['img_url'] %>">
+                    <input type="hidden" name="url" value="<%= music['url'] %>">    
+
                     <button> Add Song to Play list</button>
                 </form>
-                 
+
             </article>
         <% end %>
     </section>
