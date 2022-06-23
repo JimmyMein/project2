@@ -1,4 +1,4 @@
-<h1>Music Maker Website</h1>
+<h1>Music Playlist Maker</h1>
 <h3>Heroku Link:</h3>
 <p>https://sheltered-forest-89646.herokuapp.com/</p>
 
